@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>This is the template file</title>
+<!-- <link rel="stylesheet" href="{% static "css/mystyle.css" %}"> -->
+<link rel="stylesheet" href="styler.css">
+  </head>
+  <body>
+    <h1>Hi Welcome to MTV implementation</h1>
+    <h2>here are your access records</h2>
+    <div class="djangotwo">
+      {%if access_records%}
+        <table>
+          <th>Site Name</th>
+          <th>Date Accessed</th>
+
+          {%for acc in access_records%}
+          <tr>
+            <td>{{ acc.name }}</td>
+            <td>{{acc.date }}</td>
+
+          </tr>
+            {%endfor%}
+            </table>
+            {%else%}
+            <p>no access records found</p>
+            {%endif%}
+
+      </div>
+  </body>
+</html>
